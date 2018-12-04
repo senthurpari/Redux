@@ -1,0 +1,22 @@
+const initialState = {name: 'rapid', state :'Bangalore'};
+
+const myReducer = (state = initialState,action) => {
+const newState = {state};
+
+if(action.type === 'MODIFY'){
+newState.name = 'Rapid Value Solution';
+newState.state = 'Cochin';
+}
+return newState;
+}
+
+const store = Redux.createStore(myReducer);
+
+const myAction ={type:'MODIFY'};
+
+store.dispatch(myAction);
+
+let updatedStore = store.getState();
+
+console.log(updatedStore);
+console.log('aaaaa',updatedStore);
